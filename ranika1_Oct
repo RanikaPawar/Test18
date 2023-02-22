@@ -1,0 +1,37 @@
+package Iframe;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test1
+{
+	
+	//how to handle element present on Iframe
+	
+	public static void main(String[] args) throws InterruptedException 
+	{
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Ranika\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();          //upcasting
+		
+		//to open an application
+		driver.get("https://www.w3schools.com/js/tryit.asp?filename=tryjs_myfirst");
+		
+		Thread.sleep(2000);
+		
+		//to switch to Iframe(String framename)
+		driver.switchTo().frame("iframeResult");
+		
+		Thread.sleep(2000);
+		
+		//click me to dispaly dte and time button
+		driver.findElement(By.xpath("//button[@type='button']")).click();
+		
+		
+		
+		
+	}
+
+}
